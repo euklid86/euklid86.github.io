@@ -27,7 +27,7 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px; /* Ελαφρώς μεγαλύτερο για καλύτερο layout */
             margin: 0 auto;
             padding: 40px 20px;
         }
@@ -175,7 +175,7 @@
         /* Seminars Table */
         .seminar-item {
             display: grid;
-            grid-template-columns: 80px 1fr;
+            grid-template-columns: 60px 1fr;
             gap: 15px;
             margin-bottom: 15px;
             font-size: 0.95rem;
@@ -184,6 +184,23 @@
         .seminar-year {
             font-weight: bold;
             color: var(--secondary-color);
+        }
+
+        /* Skills Tags Styling */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: #eff6ff;
+            color: var(--secondary-color);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid #dbeafe;
         }
     </style>
 </head>
@@ -213,14 +230,14 @@
                     <div class="item-header">
                         <div>
                             <span class="item-title">Head of Software Development Department</span><br>
-                            <span class="company">Ελληνικές Υπεραγορές Σκλαβενίτη</span>
+                            <span class="company">Ελληνικές Υπεραγορές Σκλαβενίτης</span>
                         </div>
                         <span class="date">2023 - Present</span>
                     </div>
                     <ul>
-                        <li>Project management</li>
-                        <li>Requirement analysis</li>
-                        <li>Team Leadership & Development</li>
+                        <li>Project management & Technical Architecture</li>
+                        <li>Requirement analysis & Stakeholder communication</li>
+                        <li>Team Leadership, Mentoring & Talent Development</li>
                     </ul>
                 </div>
 
@@ -228,15 +245,15 @@
                     <div class="item-header">
                         <div>
                             <span class="item-title">Senior Full-Stack Developer</span><br>
-                            <span class="company">Ελληνικές Υπεραγορές Σκλαβενίτη</span>
+                            <span class="company">Ελληνικές Υπεραγορές Σκλαβενίτης</span>
                         </div>
                         <span class="date">2022 - 2023</span>
                     </div>
                     <ul>
-                        <li>Full stack development with PHP, JavaScript - jQuery, MySQL, CSS, Docker and Google Cloud</li>
-                        <li>API implementation in PHP Laravel framework</li>
-                        <li>Version control using Bitbucket, Git</li>
-                        <li>Task management using Asana, Jira</li>
+                        <li>Full stack development with PHP, JavaScript (jQuery), MySQL, CSS, Docker and Google Cloud</li>
+                        <li>Robust API implementation using PHP Laravel framework</li>
+                        <li>Version control management using Bitbucket and Git</li>
+                        <li>Agile task management and sprint planning via Asana and Jira</li>
                     </ul>
                 </div>
 
@@ -244,17 +261,16 @@
                     <div class="item-header">
                         <div>
                             <span class="item-title">Software Engineer in Billing</span><br>
-                            <span class="company">IST</span>
+                            <span class="company">Intrasoft - Netcompany</span>
                         </div>
                         <span class="date">2020 - 2022</span>
                     </div>
                     <ul>
-                        <li>Stored Procedures and tables implementation in PL/SQL</li>
-                        <li>Module implementation in Oracle SQL</li>
-                        <li>Oracle BRM customization</li>
-                        <li>Query and report implementation with Oracle SQL</li>
-                        <li>Migration planning and execution with Oracle ODI</li>
-                        <li>Unix bash scripting implementation and execution planning</li>
+                        <li>Stored Procedures and core database infrastructure design in PL/SQL</li>
+                        <li>Advanced module and reporting system implementation with Oracle SQL</li>
+                        <li>Oracle BRM customization for corporate clients</li>
+                        <li>Migration planning and production execution utilizing Oracle ODI</li>
+                        <li>Unix bash scripting for automation and execution scheduling</li>
                     </ul>
                 </div>
 
@@ -262,17 +278,15 @@
                     <div class="item-header">
                         <div>
                             <span class="item-title">Software Engineer</span><br>
-                            <span class="company">25-8 Projects</span>
+                            <span class="company">IST</span>
                         </div>
                         <span class="date">2019 - 2020</span>
                     </div>
                     <ul>
-                        <li>Technical requirements analysis</li>
-                        <li>Stored Procedures and tables implementation in PL/SQL</li>
-                        <li>Module implementation in Oracle SQL</li>
-                        <li>Query and report implementation with Oracle SQL</li>
-                        <li>Web development with Python and Angular</li>
-                        <li>VBA development</li>
+                        <li>Technical requirements analysis and architecture definition</li>
+                        <li>Stored Procedures, triggers, and complex schema implementation in PL/SQL</li>
+                        <li>Web application development utilizing Python back-end and Angular front-end</li>
+                        <li>Internal tooling development using VBA</li>
                     </ul>
                 </div>
 
@@ -280,14 +294,14 @@
                     <div class="item-header">
                         <div>
                             <span class="item-title">Full stack Developer</span><br>
-                            <span class="company">Velti</span>
+                            <span class="company">25-8 Projects</span>
                         </div>
                         <span class="date">2017 - 2018</span>
                     </div>
                     <ul>
-                        <li>Web development with PHP Zend Framework 2, JavaScript and jQuery</li>
-                        <li>Data querying with MS-SQL, Couchbase</li>
-                        <li>JavaScript building with Webpack</li>
+                        <li>Enterprise web development with PHP Zend Framework 2, JavaScript, and jQuery</li>
+                        <li>Data querying and indexing with MS-SQL and NoSQL (Couchbase)</li>
+                        <li>Modern asset bundling and performance optimization with Webpack</li>
                     </ul>
                 </div>
 
@@ -300,45 +314,61 @@
                         <span class="date">2017</span>
                     </div>
                     <ul>
-                        <li>Software configuration, error handling, reporting service</li>
-                        <li>First level investigation using Linux console and MS-SQL database.</li>
+                        <li>Software configuration, incident management, and reporting service maintenance</li>
+                        <li>L1/L2 application analysis and troubleshooting via Linux CLI and MS-SQL queries</li>
                     </ul>
                 </div>
-
             </section>
         </main>
 
         <aside>
             <section>
+                <h2>Skills</h2>
+                <div class="skills-container">
+                    <span class="skill-tag">PHP / Laravel</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Oracle SQL & PL/SQL</span>
+                    <span class="skill-tag">MySQL / MS-SQL</span>
+                    <span class="skill-tag">JavaScript / jQuery</span>
+                    <span class="skill-tag">Angular</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Google Cloud</span>
+                    <span class="skill-tag">Linux / Bash</span>
+                    <span class="skill-tag">Oracle ODI & BRM</span>
+                    <span class="skill-tag">Git / Bitbucket</span>
+                    <span class="skill-tag">Project Management</span>
+                </div>
+            </section>
+
+            <section>
                 <h2>Education</h2>
                 <div class="item">
                     <div class="item-title">Degree in Information Management</div>
-                    <div class="company">Technological Educational Institute of Kavala</div>
+                    <div class="company">TEI of Kavala</div>
                     <div class="date" style="display:inline-block; margin-top:5px;">2006 - 2010</div>
                 </div>
             </section>
 
             <section>
                 <h2>Seminars</h2>
-                
                 <div class="seminar-item">
                     <div class="seminar-year">2017</div>
                     <div>AFDEmp 1st Coding Bootcamp: Intensive 3 month full-stack developer course (AUEB/HEPIS/CEPIS)</div>
                 </div>
 
                 <div class="seminar-item">
+                    <div class="seminar-year">2013</div>
+                    <div>UI/UX seminar: Methods and Best Practices on how to optimize UI/UX</div>
+                </div>
+
+                <div class="seminar-item">
                     <div class="seminar-year">2012</div>
-                    <div>iStorm: X-Code development certification (iOS, iphone/ipad) - Basic knowledge</div>
+                    <div>iStorm: X-Code development certification (iOS, iphone/ipad)</div>
                 </div>
 
                 <div class="seminar-item">
                     <div class="seminar-year">2012</div>
                     <div>Social Media Marketing: Internet Marketing Social Media, SEO</div>
-                </div>
-
-                <div class="seminar-item">
-                    <div class="seminar-year">2013</div>
-                    <div>UI/UX seminar: Methods and Best Practices on how to optimize UI/UX</div>
                 </div>
             </section>
 
