@@ -27,12 +27,12 @@
         }
 
         .container {
-            max-width: 1100px; /* Ελαφρώς μεγαλύτερο για καλύτερο layout */
+            max-width: 1100px;
             margin: 0 auto;
             padding: 40px 20px;
         }
 
-        /* Header Section */
+        /* Αναβαθμισμένο Header Section */
         header {
             background: var(--primary-color);
             color: white;
@@ -44,8 +44,17 @@
 
         .header-content {
             display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .header-text {
+            display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 10px;
+            flex: 1;
         }
 
         header h1 {
@@ -61,6 +70,21 @@
             font-weight: 600;
         }
 
+        /* Styling για τη Φωτογραφία Προφίλ */
+        .profile-img-container {
+            flex-shrink: 0;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(59, 130, 246, 0.5); /* Διακριτικό μπλε border */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: block;
+        }
+
         .contact-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -69,6 +93,7 @@
             padding-top: 20px;
             border-top: 1px solid #334155;
             font-size: 0.95rem;
+            width: 100%;
         }
 
         .contact-info a {
@@ -79,6 +104,20 @@
 
         .contact-info a:hover {
             color: #93c5fd;
+        }
+
+        /* Responsive συμπεριφορά για το Header σε κινητά */
+        @media (max-width: 650px) {
+            .header-content {
+                flex-direction: column-reverse; /* Η φωτογραφία πάει πάνω σε μικρές οθόνες */
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
         }
 
         /* Main Content Layout */
@@ -209,14 +248,20 @@
 <div class="container">
     <header>
         <div class="header-content">
-            <h1>Euklides Michailidis</h1>
-            <div class="subtitle">Software Engineer</div>
-            
-            <div class="contact-info">
-                <div>📞 6951739875</div>
-                <div>✉️ <a href="mailto:euklid86@gmail.com">euklid86@gmail.com</a></div>
-                <div>💻 <a href="https://github.com/euklid86" target="_blank">github.com/euklid86</a></div>
-                <div>🔗 <a href="https://linkedin.com/in/emichailidis/" target="_blank">linkedin.com/in/emichailidis</a></div>
+            <div class="header-text">
+                <h1>Euklides Michailidis</h1>
+                <div class="subtitle">Software Engineer</div>
+                
+                <div class="contact-info">
+                    <div>📞 6951739875</div>
+                    <div>✉️ <a href="mailto:euklid86@gmail.com">euklid86@gmail.com</a></div>
+                    <div>💻 <a href="https://github.com/euklid86" target="_blank">github.com/euklid86</a></div>
+                    <div>🔗 <a href="https://linkedin.com/in/emichailidis/" target="_blank">linkedin.com/in/emichailidis</a></div>
+                </div>
+            </div>
+
+            <div class="profile-img-container">
+                <img src="https://media.licdn.com/dms/image/v2/C4E03AQGynrggh8gbUw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1524418716019?e=1781136000&v=beta&t=B2PIh-KJgda1M33Hbx0AVkJKZJwOm7OTk7yjJXU4Z1Q" alt="Euklides Michailidis" class="profile-img">
             </div>
         </div>
     </header>
