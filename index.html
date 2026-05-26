@@ -87,13 +87,16 @@
 
         .contact-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
             gap: 15px;
             margin-top: 15px;
             padding-top: 20px;
             border-top: 1px solid #334155;
             font-size: 0.95rem;
             width: 100%;
+            justify-content: space-around;
+            grid-auto-flow: column;
+            align-content: space-between;
         }
 
         .contact-info a {
