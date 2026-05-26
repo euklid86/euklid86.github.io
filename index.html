@@ -95,7 +95,7 @@
             font-size: 0.95rem;
             width: 100%;
             justify-content: space-around;
-            grid-auto-flow: column;
+            /* grid-auto-flow: column; */
             align-content: space-between;
         }
 
@@ -109,6 +109,9 @@
             color: #93c5fd;
         }
 
+        @media (min-width: 650px) {
+            grid-auto-flow: column;
+        }
         /* Responsive συμπεριφορά για το Header σε κινητά */
         @media (max-width: 650px) {
             .header-content {
