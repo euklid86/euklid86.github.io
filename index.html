@@ -1,1 +1,294 @@
-<h1>Hello</h1>
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euklides Michailidis - Software Engineer</title>
+    <style>
+        :root {
+            --primary-color: #1e293b;
+            --secondary-color: #3b82f6;
+            --text-color: #334155;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header Section */
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        header .subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            font-size: 0.95rem;
+        }
+
+        .contact-info a {
+            color: #60a5fa;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: #93c5fd;
+        }
+
+        /* Main Content Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+
+        /* Job & Education Items */
+        .item {
+            margin-bottom: 25px;
+        }
+
+        .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 480px) {
+            .item-header {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+
+        .item-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .company {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .date {
+            background: #e2e8f0;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+
+        ul li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Seminars Table */
+        .seminar-item {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .seminar-year {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="header-content">
+            <h1>Euklides Michailidis</h1>
+            <div class="subtitle">Software Engineer</div>
+            
+            <div class="contact-info">
+                <div>📞 6951739875</div>
+                <div>✉️ <a href="mailto:euklid86@gmail.com">euklid86@gmail.com</a></div>
+                <div>💻 <a href="https://github.com/euklid86" target="_blank">github.com/euklid86</a></div>
+                <div>🔗 <a href="https://linkedin.com/in/euklidesmichailidis/" target="_blank">linkedin.com/in/euklidesmichailidis</a></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <main>
+            <section>
+                <h2>Work Experience</h2>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <span class="item-title">Head of Software Development Department</span><br>
+                            <span class="company">Sklavenitis</span>
+                        </div>
+                        <span class="date">2023 - Present</span>
+                    </div>
+                    <ul>
+                        <li>Project management</li>
+                        <li>Requirement analysis</li>
+                        <li>Team Leadership & Development</li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <span class="item-title">Senior Full-Stack Developer</span><br>
+                            <span class="company">Intrasoft SA</span>
+                        </div>
+                        <span class="date">2022 - 2023</span>
+                    </div>
+                    <ul>
+                        <li>Full stack development with PHP, JavaScript - jQuery, MySQL, CSS, Docker and Google Cloud</li>
+                        <li>API implementation in PHP Laravel framework</li>
+                        <li>Version control using Bitbucket, Git</li>
+                        <li>Task management using Asana, Jira</li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <span class="item-title">Software Engineer in Billing</span><br>
+                            <span class="company">IST</span>
+                        </div>
+                        <span class="date">2020 - 2022</span>
+                    </div>
+                    <ul>
+                        <li>Stored Procedures and tables implementation in PL/SQL</li>
+                        <li>Module implementation in Oracle SQL</li>
+                        <li>Oracle BRM customization</li>
+                        <li>Query and report implementation with Oracle SQL</li>
+                        <li>Migration planning and execution with Oracle ODI</li>
+                        <li>Unix bash scripting implementation and execution planning</li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <span class="item-title">Software Engineer</span><br>
+                            <span class="company">25-8 Projects</span>
+                        </div>
+                        <span class="date">2019 - 2020</span>
+                    </div>
+                    <ul>
+                        <li>Technical requirements analysis</li>
+                        <li>Stored Procedures and tables implementation in PL/SQL</li>
+                        <li>Module implementation in Oracle SQL</li>
+                        <li>Query and report implementation with Oracle SQL</li>
+                        <li>Web development with Python and Angular</li>
+                        <li>VBA development</li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <span class="item-title">Full stack Developer</span><br>
+                            <span class="company">Velti</span>
+                        </div>
+                        <span class="date">2017 - 2018</span>
+                    </div>
+                    <ul>
+                        <li>Web development with PHP Zend Framework 2, JavaScript and jQuery</li>
+                        <li>Data querying with MS-SQL, Couchbase</li>
+                        <li>JavaScript building with Webpack</li>
+                    </ul>
+                </div>
+
+                <div class="item">
