@@ -245,6 +245,173 @@
             font-weight: 600;
             border: 1px solid #dbeafe;
         }
+        
+        @media print {
+            @page {
+                size: A4;
+                margin: 15mm 12mm;
+            }
+            
+            body {
+                background-color: #ffffff;
+                color: #1e293b;
+                font-size: 9.5pt;
+            }
+
+            .container {
+                padding: 0;
+                max-width: 100%;
+            }
+
+            header {
+                background: transparent !important;
+                color: #1e293b !important;
+                padding: 0 0 15px 0;
+                border-radius: 0;
+                margin-bottom: 20px;
+                border-bottom: 2px solid #1e293b;
+                box-shadow: none;
+            }
+
+            .header-content {
+                display: block; /* Απλό block για σωστό print */
+                position: relative;
+                width: 100%;
+            }
+
+            .header-text {
+                display: block;
+                width: 80%;
+            }
+
+            .profile-img-container {
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100px;
+            }
+
+            header h1 {
+                color: #1e293b !important;
+                font-size: 22pt;
+            }
+
+            header .subtitle {
+                color: #3b82f6 !important;
+                font-size: 11pt;
+                margin-bottom: 10px;
+            }
+
+            .contact-info {
+                border-top: 1px solid #cbd5e1;
+                display: block; /* Μετατροπή από grid σε απλά blocks */
+                margin-top: 10px;
+                padding-top: 10px;
+            }
+
+            .contact-info div {
+                display: inline-block;
+                width: 48%;
+                margin-bottom: 4px;
+            }
+
+            .contact-info a {
+                color: #1e293b !important;
+                text-decoration: underline;
+            }
+
+            .profile-img {
+                border: 2px solid #3b82f6;
+                width: 90px;
+                height: 90px;
+            }
+
+            /* Καταργούμε το Grid/Table που δημιουργούσε τη λευκή σελίδα */
+            .main-layout {
+                display: block; 
+                width: 100%;
+            }
+
+            main, aside {
+                display: block;
+                width: 100%;
+                padding: 0;
+            }
+
+            section {
+                background: transparent !important;
+                padding: 0;
+                margin-bottom: 20px;
+                box-shadow: none;
+                /* Επιτρέπουμε στο περιεχόμενο να αλλάζει σελίδα ομαλά */
+                page-break-inside: auto; 
+            }
+
+            /* Αποτρέπουμε να μένει ο τίτλος μόνος του στο τέλος της σελίδας */
+            h2 {
+                color: #1e293b !important;
+                font-size: 13pt;
+                border-bottom: 2px solid #1e293b;
+                margin-bottom: 10px;
+                page-break-after: avoid; 
+            }
+
+            /* Κάθε μεμονωμένη εμπειρία να μην σπάει στη μέση αν είναι εφικτό */
+            .item, .seminar-item {
+                page-break-inside: avoid;
+                margin-bottom: 15px;
+            }
+
+            .item-header {
+                display: block;
+                position: relative;
+            }
+
+            .item-header div {
+                width: 75%;
+                display: inline-block;
+            }
+
+            .item-header .date {
+                position: absolute;
+                right: 0;
+                top: 0;
+                background: transparent !important;
+                border: 1px solid #cbd5e1;
+                color: #334155 !important;
+                padding: 1px 6px;
+                display: inline-block;
+            }
+
+            .skills-container {
+                display: block;
+            }
+
+            .skill-tag {
+                display: inline-block;
+                background: transparent !important;
+                color: #1e293b !important;
+                border: 1px solid #cbd5e1 !important;
+                padding: 2px 6px;
+                margin-right: 4px;
+                margin-bottom: 4px;
+            }
+
+            .seminar-item {
+                display: block;
+            }
+            .seminar-year {
+                display: inline-block;
+                width: 50px;
+                color: #3b82f6 !important;
+            }
+            .seminar-item div:last-child {
+                display: inline-block;
+                width: calc(100% - 60px);
+                vertical-align: top;
+            }
+        }
     </style>
 </head>
 <body>
