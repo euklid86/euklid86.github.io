@@ -90,6 +90,16 @@
     border-radius: 12px;
     font-size: 13px;
     line-height: 1.4;
+    white-space: pre-line;
+}
+
+.message-first {
+    max-width: 80%;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    line-height: 1.4;
+    /* white-space: pre-line; */
 }
 
 .user-message {
