@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Efkleidis Michailidis - Head of Software Development</title>
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/chat.css" />
 </head>
 <body>
 
@@ -13,7 +14,7 @@
         <div class="header-content">
             <div class="header-text">
                 <h1>Efkleidis Michailidis</h1>
-                <div class="subtitle">Software Development Leader</div> 
+                <div class="subtitle">Head of Software Development Leader</div> 
                 <div class="b-subtitle"> AI & Full-Stack Engineering</div>
                 
                 <div class="contact-info">
@@ -25,7 +26,7 @@
             </div>
 
             <div class="profile-img-container">
-                <img src="profile.jpeg" alt="Efkleidis Michailidis" class="profile-img">
+                <img src="assets/profile.jpeg" alt="Efkleidis Michailidis" class="profile-img">
             </div>
         </div>
     </header>
@@ -203,6 +204,44 @@
         </aside>
     </div>
 </div>
+<!-- Chat Widget Container -->
+<div id="chat-widget-container">
+    <!-- Floating Toggle Button -->
+    <button id="chat-toggle-btn" aria-label="Open Chat">
+        💬
+    </button>
 
+    <!-- Chat Box Window -->
+    <div id="chat-box" class="chat-hidden">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <strong>Ask Efkleidis's AI Assistant</strong>
+                <span class="status-dot"></span>
+            </div>
+            <div class="chat-header-actions">
+                <button id="chat-reset-btn" title="Reset Chat">🔄</button>
+                <button id="chat-close-btn">&times;</button>
+            </div>
+        </div>
+
+        <div id="chat-messages" class="chat-messages">
+            <div class="message assistant-message">
+                Γεια σου! Είμαι ο AI βοηθός του Ευκλείδη. Πώς μπορώ να σε βοηθήσω σχετικά με την εμπειρία ή τις τεχνολογίες του;
+            </div>
+        </div>
+
+        <!-- Suggestion Chips -->
+        <div class="chat-suggestions">
+            <button class="chip" onclick="sendSuggestedQuestion(this)">Ποια είναι η εμπειρία σου στο GenAI;</button>
+            <button class="chip" onclick="sendSuggestedQuestion(this)">Ποιες τεχνολογίες χρησιμοποιείς στο backend;</button>
+        </div>
+
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Γράψε μια ερώτηση..." />
+            <button id="chat-send-btn">➤</button>
+        </div>
+    </div>
+</div>
+<script src="js/chat.js"></script>
 </body>
 </html>
