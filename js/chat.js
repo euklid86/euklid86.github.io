@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 3. UI Loading Indicator
         const loadingDiv = document.createElement('div');
         loadingDiv.className = 'message assistant-message';
-        loadingDiv.textContent = 'Σκέφτεται...';
+        loadingDiv.textContent = 'Thinking...';
         messagesContainer.appendChild(loadingDiv);
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             const data = await response.json();
-            messagesContainer.removeChild(loadingDiv);
+            loadingDiv.remove();
 
             if (data.reply) {
                 // 5. Εμφάνιση απάντησης στο UI
@@ -60,23 +60,80 @@ document.addEventListener('DOMContentLoaded', () => {
                     parts: [{ text: data.reply }]
                 });
             } else {
-                addMessageToUI('Κάτι πήγε στραβά. Παρακαλώ δοκιμάστε ξανά.', 'assistant-message');
+                // addMessageToUI('Κάτι πήγε στραβά. Παρακαλώ δοκιμάστε ξανά.', 'assistant-message');
+                addMessageToUI('Something went wrong. Please try again.', 'assistant-message');
                 // Αν απέτυχε, αφαιρούμε το τελευταίο ερώτημα για να μην μολυνθεί το ιστορικό
                 chatHistory.pop();
             }
         } catch (error) {
-            messagesContainer.removeChild(loadingDiv);
-            addMessageToUI('Σφάλμα σύνδεσης με τον server.', 'assistant-message');
+            loadingDiv.remove();
+            // addMessageToUI('Σφάλμα σύνδεσης με τον server.', 'assistant-message');
+            addMessageToUI('Connection error with the server.', 'assistant-message');
             chatHistory.pop();
         }
     }
 
-    function addMessageToUI(text, className) {
+    async function addMessageToUI(text, className) {
         const msgDiv = document.createElement('div');
         msgDiv.className = `message ${className}`;
-        msgDiv.textContent = text;
         messagesContainer.appendChild(msgDiv);
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    
+        if (className === 'assistant-message') {
+            // 1. Χωρίζουμε το κείμενο σε παραγράφους
+            const paragraphs = text.split(/\n+/);
+    
+            for (let i = 0; i < paragraphs.length; i++) {
+                const trimmedParagraph = paragraphs[i].trim();
+                if (trimmedParagraph.length === 0) continue;
+    
+                const p = document.createElement('p');
+                p.style.margin = '0 0 8px 0';
+                msgDiv.appendChild(p);
+    
+                // 2. Χωρίζουμε την παράγραφο σε τμήματα (tokens) με βάση τα ** ή *
+                // Παράδειγμα: "Γεια **Ευκλείδη**!" -> ["Γεια ", "**Ευκλείδη**", "!"]
+                const tokens = trimmedParagraph.split(/(\*\*.*?\*\*|\*.*?\*)/g);
+    
+                for (let token of tokens) {
+                    if (!token) continue;
+    
+                    // Ελέγχουμε αν το token είναι περιτυλιγμένο σε ** ή *
+                    const isBold = (token.startsWith('**') && token.endsWith('**')) || 
+                                   (token.startsWith('*') && token.endsWith('*'));
+    
+                    // Αφαιρούμε τα σύμβολα Markdown για να πάρουμε το καθαρό κείμενο
+                    let cleanText = isBold ? token.replace(/^\*\*|\*\* me|^\*|\*$/g, '').replace(/\*/g, '') : token;
+                    if (cleanText.startsWith('*')) {
+                        cleanText = cleanText.replace('*', '\n');
+                    }
+                    // Δημιουργούμε το κατάλληλο HTML element (strong ή plain text Node)
+                    let targetNode;
+                    if (isBold) {
+                        targetNode = document.createElement('strong');
+                        p.appendChild(targetNode);
+                    } else {
+                        targetNode = document.createTextNode('');
+                        p.appendChild(targetNode);
+                    }
+    
+                    // 3. Εφέ πληκτρολόγησης ανά χαρακτήρα
+                    for (let char of cleanText) {
+                        targetNode.textContent += char;
+                        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                        await new Promise(resolve => setTimeout(resolve, 15));
+                    }
+                }
+            }
+    
+            // Αφαίρεση του κάτω περιθωρίου από την τελευταία παράγραφο
+            if (msgDiv.lastElementChild) {
+                msgDiv.lastElementChild.style.marginBottom = '0';
+            }
+        } else {
+            // Τα μηνύματα του χρήστη εμφανίζονται αμέσως
+            msgDiv.textContent = text;
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
     }
 
     resetBtn.addEventListener('click', resetChat);
@@ -87,12 +144,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 2. Επαναφορά του UI στο αρχικό μήνυμα καλωσορίσματος
         messagesContainer.innerHTML = `
-            <div class="message assistant-message">
-                Γεια σου! Είμαι ο AI βοηθός του Ευκλείδη. Πώς μπορώ να σε βοηθήσω σχετικά με την εμπειρία ή τις τεχνολογίες του;
+            <div class="message-first assistant-message">
+                Hello! I am Efkleidi's AI assistant. How can I help you regarding his experience or the technologies he knows?
             </div>
         `;
     }
-    
+
     window.sendSuggestedQuestion = function(chipElement) {
         chatInput.value = chipElement.textContent;
         handleSend();
