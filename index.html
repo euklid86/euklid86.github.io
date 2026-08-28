@@ -10,11 +10,12 @@
 <body>
 
 <div class="container">
+    <button id="lang-toggle-btn" class="lang-btn">EN</button>
     <header>
         <div class="header-content">
             <div class="header-text">
-                <h1>Efkleidis Michailidis</h1>
-                <div class="subtitle">Head of Software Development Leader</div> 
+                <h1 data-el="Ευκλείδης Μιχαηλίδης" data-en="Efkleidis Michailidis">Efkleidis Michailidis</h1>
+                <div class="subtitle" data-el="Υπεύθυνος Τμηματος Ανάπτυξης Εφαρμογών" data-en="Software Development Leader">Software Development Leader</div> 
                 <div class="b-subtitle"> AI & Full-Stack Engineering</div>
                 
                 <div class="contact-info">
@@ -24,28 +25,29 @@
                     <div>🔗 <a href="https://linkedin.com/in/emichailidis/" target="_blank">linkedin</a></div>
                 </div>
             </div>
-
             <div class="profile-img-container">
                 <img src="assets/profile.jpeg" alt="Efkleidis Michailidis" class="profile-img">
             </div>
         </div>
+       
     </header>
 
     <section>
-        <h2>About</h2>
+        <h2 data-el="Γενικά" data-en="About">About</h2>
         <div>
-            <strong>Head of Software Development & Senior Full-Stack Engineer</strong> with extensive experience in leading development teams, building robust enterprise software and architecting GenAI applications. Experienced in LLM configuration, RAG architectures, full-stack frameworks (PHP Laravel, JavaScript, Python), and database management (Oracle SQL, MySQL). Driven by innovation, clean architecture, and delivering high-value technical solutions.
+            <strong data-el="Υπεύθυνος Τμηματος Ανάπτυξης Εφαρμογών" data-en="Head of Software Development & Senior Full-Stack Engineer">Head of Software Development & Senior Full-Stack Engineer</strong> 
+            <span data-el=" με εκτενή εμπειρία στη διοίκηση ομάδων ανάπτυξης, τη δημιουργία σταθερών εφαρμογών και τον σχεδιασμό αρχιτεκτονικής εφαρμογών Τεχνητής Νοημοσύνης (GenAI). Διαθέτω εμπειρία στη διαμόρφωση μοντέλων LLM, σε αρχιτεκτονικές RAG, σε πλαίσια ανάπτυξης full-stack (PHP Laravel, JavaScript, Python) και στη διαχείριση βάσεων δεδομένων (Oracle SQL, MySQL). Κινούμαι από το πνεύμα της καινοτομίας, της καθαρής αρχιτεκτονικής και της παροχής τεχνικών λύσεων υψηλής ποιότητας." data-en=" with extensive experience in leading development teams, building robust enterprise software and architecting GenAI applications. Experienced in LLM configuration, RAG architectures, full-stack frameworks (PHP Laravel, JavaScript, Python), and database management (Oracle SQL, MySQL). Driven by innovation, clean architecture, and delivering high-value technical solutions.">with extensive experience in leading development teams, building robust enterprise software and architecting GenAI applications. Experienced in LLM configuration, RAG architectures, full-stack frameworks (PHP Laravel, JavaScript, Python), and database management (Oracle SQL, MySQL). Driven by innovation, clean architecture, and delivering high-value technical solutions.</span>
         </div>
     </section>
     <div class="main-layout">
         <main>
             <section>
-                <h2>Work Experience</h2>
+                <h2 data-el="Εργασιακή Εμπειρία" data-en="Work Experience">Work Experience</h2>
                 
                 <div class="item">
                     <div class="item-header">
                         <div>
-                            <span class="item-title">Head of Software Development Department</span><br>
+                            <span class="item-title" data-el="Υπεύθυνος Τμηματος Ανάπτυξης Εφαρμογών" data-en="Head of Software Development Department">Head of Software Development Department</span><br>
                             <span class="company">Ελληνικές Υπεραγορές Σκλαβενίτης</span>
                         </div>
                         <span class="date">2023 - Present</span>
@@ -143,7 +145,7 @@
 
         <aside>
             <section>
-                <h2>Skills</h2>
+                <h2 data-el="Γνώσεις" data-en="Skills">Skills</h2>
                 <div class="skills-container">
                     <span class="skill-tag">PHP / Laravel</span>
                     <span class="skill-tag">Python</span>
@@ -161,7 +163,7 @@
             </section>
 
             <section>
-                <h2>Education</h2>
+                <h2 data-el="Εκπαίδευση" data-en="Education">Education</h2>
                 <div class="item">
                     <div class="item-title">Degree in Information Management</div>
                     <div class="company">TEI of Kavala</div>
@@ -170,7 +172,7 @@
             </section>
 
             <section>
-                <h2>Seminars</h2>
+                <h2 data-el="Σεμινάρια" data-en="Seminars">Seminars</h2>
                 <div class="seminar-item">
                     <div class="seminar-year">2026</div>
                     <div>Certificate of completion: Claude code 101</div>
@@ -197,9 +199,15 @@
             </section>
 
             <section>
-                <h2>Languages</h2>
-                <div><strong>English:</strong> Fluent</div>
-                <div><strong>Greek:</strong> Fluent</div>
+                <h2 data-el="Γλώσσες" data-en="Languages">Languages</h2>
+                <div>
+                    <strong data-el="Αγγλικά" data-en="English">English:</strong> 
+                    <span data-el="Άριστη" data-en="Fluent">Fluent</span>
+                </div>
+                <div>
+                    <strong data-el="Ελληνικά" data-en="Greek">Greek:</strong> 
+                    <span data-el="Άριστη" data-en="Fluent">Fluent</span>
+                </div>
             </section>
         </aside>
     </div>
@@ -227,7 +235,6 @@
         <div id="chat-messages" class="chat-messages">
             <div class="message-first assistant-message">
                 Hello! I am Efkleidi's AI assistant. How can I help you regarding his experience or the technologies he knows?
-                <!-- Γεια σου! Είμαι ο AI βοηθός του Ευκλείδη. Πώς μπορώ να σε βοηθήσω σχετικά με την εμπειρία ή τις τεχνολογίες του; -->
             </div>
         </div>
 
