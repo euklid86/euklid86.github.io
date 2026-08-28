@@ -1,11 +1,52 @@
 document.addEventListener('DOMContentLoaded', () => {
+    
+    const translations = {
+        el: {
+            welcome: "Γεια σου! Είμαι ο AI βοηθός του Ευκλείδη. Πώς μπορώ να σε βοηθήσω;",
+            thinking: "Σκέφτεται...",
+            placeholder: "Γράψε το μήνυμά σου...",
+            toggleBtn: "EN",
+            systemInstruction: (resumeData) => `
+                Είσαι ο ψηφιακός βοηθός (AI Assistant) του Ευκλείδη Μιχαηλίδη.
+                Απάντησε στις ερωτήσεις στα ΕΛΛΗΝΙΚΑ χρησιμοποιώντας ΑΠΟΚΛΕΙΣΤΙΚΑ τα παρακάτω δεδομένα:
+                ${JSON.stringify(resumeData, null, 2)}
+            `
+        },
+        en: {
+            welcome: "Hello! I am Efkleidis's AI assistant. How can I help you today?",
+            thinking: "Thinking...",
+            placeholder: "Type your message...",
+            toggleBtn: "EL",
+            systemInstruction: (resumeData) => `
+                You are the digital AI Assistant for Efkleidis Michailidis.
+                Answer questions in ENGLISH strictly using the following background data:
+                ${JSON.stringify(resumeData, null, 2)}
+            `
+        }
+    };
+
     const toggleBtn = document.getElementById('chat-toggle-btn');
     const closeBtn = document.getElementById('chat-close-btn');
     const chatBox = document.getElementById('chat-box');
     const sendBtn = document.getElementById('chat-send-btn');
-    const chatInput = document.getElementById('chat-input');
     const messagesContainer = document.getElementById('chat-messages');
     const resetBtn = document.getElementById('chat-reset-btn');
+
+    const langToggleBtn = document.getElementById('lang-toggle-btn');
+    const chatInput = document.getElementById('chat-input');
+    let currentLang = 'en';
+    // 2. Event Listener για εναλλαγή γλώσσας
+    langToggleBtn?.addEventListener('click', () => {
+        currentLang = currentLang === 'el' ? 'en' : 'el';
+        
+        // Ενημέρωση κουμπιού & Placeholder
+        langToggleBtn.textContent = translations[currentLang].toggleBtn;
+        if (chatInput) chatInput.placeholder = translations[currentLang].placeholder;
+
+        // Επανεκκίνηση του chat στη νέα γλώσσα
+        resetChat();
+        updatePageLanguage(currentLang);
+    });
 
     // Πίνακας διατήρησης ιστορικού για το Gemini API (role: 'user' | 'model')
     let chatHistory = [];
@@ -33,9 +74,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // 3. UI Loading Indicator
+        // const loadingDiv = document.createElement('div');
+        // loadingDiv.className = 'message assistant-message';
+        // loadingDiv.textContent = 'Thinking...';
+        // messagesContainer.appendChild(loadingDiv);
+        // messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
         const loadingDiv = document.createElement('div');
-        loadingDiv.className = 'message assistant-message';
-        loadingDiv.textContent = 'Thinking...';
+        loadingDiv.className = 'message assistant-message loading-wrapper';
+        
+        // Προσθήκη του loader και του κειμένου
+        loadingDiv.innerHTML = `
+            <div class="gemini-loader"></div>
+            <span>${translations[currentLang].thinking}</span>
+        `;
+        
         messagesContainer.appendChild(loadingDiv);
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
@@ -106,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (cleanText.startsWith('*')) {
                         cleanText = cleanText.replace('*', '\n');
                     }
+                    cleanText = cleanText.replace(':', '');
                     // Δημιουργούμε το κατάλληλο HTML element (strong ή plain text Node)
                     let targetNode;
                     if (isBold) {
@@ -145,9 +199,32 @@ document.addEventListener('DOMContentLoaded', () => {
         // 2. Επαναφορά του UI στο αρχικό μήνυμα καλωσορίσματος
         messagesContainer.innerHTML = `
             <div class="message-first assistant-message">
-                Hello! I am Efkleidi's AI assistant. How can I help you regarding his experience or the technologies he knows?
+                ${translations[currentLang].welcome}
             </div>
         `;
+    }
+
+    function updatePageLanguage(lang) {
+        currentLang = lang;
+    
+        // Αλλαγή κειμένου σε όλα τα elements με data-el / data-en
+        document.querySelectorAll('[data-el][data-en]').forEach(el => {
+            el.textContent = el.getAttribute(`data-${lang}`);
+        });
+    
+        // Αλλαγή σε Placeholders (π.χ. στο Chat Input)
+        document.querySelectorAll('[data-placeholder-el][data-placeholder-en]').forEach(el => {
+            el.placeholder = el.getAttribute(`data-placeholder-${lang}`);
+        });
+    
+        // Ενημέρωση του κειμένου στο κουμπί toggle
+        const toggleBtn = document.getElementById('lang-toggle-btn');
+        if (toggleBtn) {
+            toggleBtn.textContent = lang === 'el' ? 'EL' : 'EN';
+        }
+    
+        // Επανεκκίνηση του Chatbot με τη νέα γλώσσα
+        resetChat();
     }
 
     window.sendSuggestedQuestion = function(chipElement) {
