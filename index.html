@@ -225,15 +225,18 @@
         </div>
 
         <div id="chat-messages" class="chat-messages">
-            <div class="message assistant-message">
-                Γεια σου! Είμαι ο AI βοηθός του Ευκλείδη. Πώς μπορώ να σε βοηθήσω σχετικά με την εμπειρία ή τις τεχνολογίες του;
+            <div class="message-first assistant-message">
+                Hello! I am Efkleidi's AI assistant. How can I help you regarding his experience or the technologies he knows?
+                <!-- Γεια σου! Είμαι ο AI βοηθός του Ευκλείδη. Πώς μπορώ να σε βοηθήσω σχετικά με την εμπειρία ή τις τεχνολογίες του; -->
             </div>
         </div>
 
         <!-- Suggestion Chips -->
         <div class="chat-suggestions">
-            <button class="chip" onclick="sendSuggestedQuestion(this)">Ποια είναι η εμπειρία σου στο GenAI;</button>
-            <button class="chip" onclick="sendSuggestedQuestion(this)">Ποιες τεχνολογίες χρησιμοποιείς στο backend;</button>
+            <button class="chip" onclick="sendSuggestedQuestion(this)">What is your experience with GenAI?</button>
+            <button class="chip" onclick="sendSuggestedQuestion(this)">What technologies do you use on the backend?</button>
+            <!-- <button class="chip" onclick="sendSuggestedQuestion(this)">Ποια είναι η εμπειρία σου στο GenAI;</button>
+            <button class="chip" onclick="sendSuggestedQuestion(this)">Ποιες τεχνολογίες χρησιμοποιείς στο backend;</button> -->
         </div>
 
         <div class="chat-input-area">
@@ -243,5 +246,6 @@
     </div>
 </div>
 <script src="js/chat.js"></script>
+
 </body>
 </html>
