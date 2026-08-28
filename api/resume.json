@@ -1,0 +1,103 @@
+{
+  "personal_info": {
+    "name": "Efkleidis Michailidis",
+    "title": "Head of Software Development Leader - AI & Full-Stack Engineering",
+    "phone": "6951739875",
+    "email": "euklid86@gmail.com",
+    "github": "https://github.com/euklid86",
+    "linkedin": "https://linkedin.com/in/emichailidis/"
+  },
+  "about": "Head of Software Development & Senior Full-Stack Engineer with extensive experience in leading development teams, building robust enterprise software and architecting GenAI applications. Experienced in LLM configuration, RAG architectures, full-stack frameworks (PHP Laravel, JavaScript, Python), and database management (Oracle SQL, MySQL). Driven by innovation, clean architecture, and delivering high-value technical solutions.",
+  "experience": [
+    {
+      "role": "Head of Software Development Department",
+      "company": "Ελληνικές Υπεραγορές Σκλαβενίτης",
+      "period": "2023 - Present",
+      "highlights": [
+        "Project management & Technical Architecture",
+        "RAG-based AI chat application development (Gemini API, vector DB, Slack integration, TTS)",
+        "Text-to-SQL application for natural language database querying",
+        "LLM configuration & parametrization (Claude, Gemini, ChatGPT) for enterprise use",
+        "AI Agent design & development (ChatGPT Assistants, NotebookLM)",
+        "Requirement analysis & Stakeholder communication",
+        "Team Leadership, Mentoring & Talent Development"
+      ]
+    },
+    {
+      "role": "Senior Full-Stack Developer",
+      "company": "Ελληνικές Υπεραγορές Σκλαβενίτης",
+      "period": "2022 - 2023",
+      "highlights": [
+        "Full stack development with PHP, JavaScript (jQuery), MySQL, CSS, Docker and Google Cloud",
+        "Robust API implementation using PHP Laravel framework",
+        "Version control management using Bitbucket and Git",
+        "Agile task management and sprint planning via Asana and Jira"
+      ]
+    },
+    {
+      "role": "Software Engineer in Billing",
+      "company": "Intrasoft - Netcompany",
+      "period": "2020 - 2022",
+      "highlights": [
+        "Stored Procedures and core database infrastructure design in PL/SQL",
+        "Advanced module and reporting system implementation with Oracle SQL",
+        "Oracle BRM customization for corporate clients",
+        "Migration planning and production execution utilizing Oracle ODI",
+        "Unix bash scripting for automation and execution scheduling"
+      ]
+    },
+    {
+      "role": "Software Engineer",
+      "company": "IST",
+      "period": "2019 - 2020",
+      "highlights": [
+        "Technical requirements analysis and architecture definition",
+        "Stored Procedures, triggers, and complex schema implementation in PL/SQL",
+        "Web application development utilizing Python back-end and Angular front-end",
+        "Internal tooling development using VBA"
+      ]
+    },
+    {
+      "role": "Full stack Developer",
+      "company": "25-8 Projects",
+      "period": "2017 - 2018",
+      "highlights": [
+        "Enterprise web development with PHP Zend Framework 2, JavaScript, and jQuery",
+        "Data querying and indexing with MS-SQL and NoSQL (Couchbase)",
+        "Modern asset bundling and performance optimization with Webpack"
+      ]
+    },
+    {
+      "role": "Service Operation Engineer",
+      "company": "Velti",
+      "period": "2017",
+      "highlights": [
+        "Software configuration, incident management, and reporting service maintenance",
+        "L1/L2 application analysis and troubleshooting via Linux CLI and MS-SQL queries"
+      ]
+    }
+  ],
+  "skills": [
+    "PHP / Laravel", "Python", "Oracle SQL & PL/SQL", "MySQL / MS-SQL", 
+    "JavaScript / jQuery", "Angular", "Docker", "Google Cloud", 
+    "Linux / Bash", "Oracle ODI & BRM", "Git / Bitbucket", "Project Management"
+  ],
+  "education": [
+    {
+      "degree": "Degree in Information Management",
+      "institution": "TEI of Kavala",
+      "period": "2006 - 2010"
+    }
+  ],
+  "seminars": [
+    { "year": "2026", "title": "Certificate of completion: Claude code 101" },
+    { "year": "2017", "title": "AFDEmp 1st Coding Bootcamp: Intensive 3 month full-stack developer course (AUEB/HEPIS/CEPIS)" },
+    { "year": "2013", "title": "UI/UX seminar: Methods and Best Practices on how to optimize UI/UX" },
+    { "year": "2012", "title": "iStorm: X-Code development certification (iOS, iphone/ipad)" },
+    { "year": "2012", "title": "Social Media Marketing: Internet Marketing Social Media, SEO" }
+  ],
+  "languages": [
+    { "language": "English", "proficiency": "Fluent" },
+    { "language": "Greek", "proficiency": "Fluent" }
+  ]
+}
