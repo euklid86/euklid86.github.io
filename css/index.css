@@ -420,4 +420,12 @@ ul li::before {
         width: calc(100% - 60px);
         vertical-align: top;
     }
+
+    #lang-toggle-btn {
+        display: none;
+    }
+
+    #chat-widget-container {
+        display: none;
+    }
 }
