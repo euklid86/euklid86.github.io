@@ -16,25 +16,5 @@
   "start_url": "/",
   "background_color": "#ffffff",
   "theme_color": "#007bff",
-  "display": "standalone",
-  "shortcuts": [
-    {
-      "name": "Επικοινωνία / Email",
-      "short_name": "Επικοινωνία",
-      "description": "Στείλτε άμεσα email στον Ευκλείδη",
-      "url": "mailto:euklid86@gmail.com"
-    },
-    {
-      "name": "Προφίλ LinkedIn",
-      "short_name": "LinkedIn",
-      "description": "Δείτε το προφίλ στο LinkedIn",
-      "url": "https://linkedin.com/in/emichailidis/"
-    },
-    {
-      "name": "AI Assistant Chat",
-      "short_name": "AI Chat",
-      "description": "Ανοίξτε απευθείας τον AI βοηθό",
-      "url": "/index.html?openChat=true"
-    }
-  ]
+  "display": "standalone"
 }
