@@ -248,9 +248,25 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // 1. Χειρισμός Shortcut για Email
         if (urlParams.get('action') === 'email') {
-            window.location.href = 'mailto:euklid86@gmail.com';
-            // Καθαρισμός URL
+            // Καθαρίζουμε το URL για να μην ξανα-ενεργοποιηθεί σε refresh
             window.history.replaceState({}, document.title, window.location.pathname);
+    
+            // 1. Σκρολάρουμε ομαλά στην ενότητα επικοινωνίας
+            const contactSection = document.querySelector('.contact-info');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
+    
+            // 2. Δημιουργούμε ένα προσωρινό κουμπί/σύνδεσμο και το πατάμε προγραμματιστικά 
+            // ή ανοίγουμε το mailto με ένα μικρό timeout
+            setTimeout(() => {
+                const mailLink = document.createElement('a');
+                mailLink.href = 'mailto:euklid86@gmail.com';
+                mailLink.rel = 'noopener noreferrer';
+                document.body.appendChild(mailLink);
+                mailLink.click();
+                document.body.removeChild(mailLink);
+            }, 300);
         }
         
         // 2. Χειρισμός Shortcut για AI Chat
