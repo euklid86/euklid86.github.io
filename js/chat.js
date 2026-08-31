@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
         
         // 1. Χειρισμός Shortcut για Email
-        if (urlParams.get('action') === 'email') {
+        if (urlParams.get('email') === 'true') {
             // Καθαρίζουμε το URL για να μην ξανα-ενεργοποιηθεί σε refresh
             window.history.replaceState({}, document.title, window.location.pathname);
     
