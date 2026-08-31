@@ -231,4 +231,15 @@ document.addEventListener('DOMContentLoaded', () => {
         chatInput.value = chipElement.textContent;
         handleSend();
     };
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('openChat') === 'true') {
+            // Κώδικας που ανοίγει αυτόματα το chat window
+            const chatBox = document.getElementById('chat-box');
+            if (chatBox) {
+                chatBox.classList.remove('chat-hidden');
+            }
+        }
+    });
 });
