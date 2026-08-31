@@ -75,6 +75,24 @@
         "Software configuration, incident management, and reporting service maintenance",
         "L1/L2 application analysis and troubleshooting via Linux CLI and MS-SQL queries"
       ]
+    },
+    {
+      "role": "Sales - Automation",
+      "company": "Topfrost",
+      "period": "2016",
+      "highlights": [
+        "Sales", "social media", "e-mail campaigns", "Web page content management"
+      ]
+    },
+    {
+      "role": "Sales - Import manager",
+      "company": "Makis Nikos furniture",
+      "period": "2016",
+      "highlights": [
+        "Webpage maintenance and content management",
+        "Sales retail and wholesale",
+        "imports management and comunication"
+      ]
     }
   ],
   "skills": [
@@ -99,5 +117,9 @@
   "languages": [
     { "language": "English", "proficiency": "Fluent" },
     { "language": "Greek", "proficiency": "Fluent" }
+  ],
+  "hobbies": [
+    "runninhg",
+    "swimming"
   ]
 }
