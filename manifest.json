@@ -29,7 +29,7 @@
       "name": "LinkedIn",
       "short_name": "LinkedIn",
       "description": "Δείτε το προφίλ στο LinkedIn",
-      "url": "https://linkedin.com/in/emichailidis/",
+      "url": "/linkedin.html",
       "icons": [{ "src": "/assets/icon-linkedin.png", "sizes": "192x192" }]
     },
     {
