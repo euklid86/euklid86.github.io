@@ -1,9 +1,14 @@
-const CACHE_NAME = 'site-cache-v1';
+const CACHE_NAME = 'site-cache-v2';
 const urlsToCache = [
   '/',
   '/index.html',
-  '/css/styles.css',
-  '/js/main.js'
+  '/css/index.css',
+  '/css/chat.css',
+  '/js/index.js',
+  '/js/chat.js',
+  '/assets/profile.jpeg',
+  '/api/chat.js',
+  '/api/resume.json'
 ];
 
 self.addEventListener('install', (event) => {
