@@ -232,14 +232,37 @@ document.addEventListener('DOMContentLoaded', () => {
         handleSend();
     };
 
-    window.addEventListener('DOMContentLoaded', () => {
+    // window.addEventListener('DOMContentLoaded', () => {
+    //     const urlParams = new URLSearchParams(window.location.search);
+    //     if (urlParams.get('openChat') === 'true') {
+    //         // Κώδικας που ανοίγει αυτόματα το chat window
+    //         const chatBox = document.getElementById('chat-box');
+    //         if (chatBox) {
+    //             chatBox.classList.remove('chat-hidden');
+    //         }
+    //     }
+    // });
+
+    document.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
+        
+        // 1. Χειρισμός Shortcut για Email
+        if (urlParams.get('action') === 'email') {
+            window.location.href = 'mailto:euklid86@gmail.com';
+            // Καθαρισμός URL
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+        
+        // 2. Χειρισμός Shortcut για AI Chat
         if (urlParams.get('openChat') === 'true') {
-            // Κώδικας που ανοίγει αυτόματα το chat window
             const chatBox = document.getElementById('chat-box');
             if (chatBox) {
                 chatBox.classList.remove('chat-hidden');
+                const chatInput = document.getElementById('chat-input');
+                if (chatInput) chatInput.focus();
             }
+            // Καθαρισμός URL
+            window.history.replaceState({}, document.title, window.location.pathname);
         }
     });
 });
