@@ -19,14 +19,14 @@
   "display": "standalone",
   "shortcuts": [
     {
-      "name": "Επικοινωνία / Email",
+      "name": "Email",
       "short_name": "Επικοινωνία",
       "description": "Στείλτε άμεσα email στον Ευκλείδη",
       "url": "mailto:euklid86@gmail.com",
       "icons": [{ "src": "/assets/icon-email.png", "sizes": "192x192" }]
     },
     {
-      "name": "Προφίλ LinkedIn",
+      "name": "LinkedIn",
       "short_name": "LinkedIn",
       "description": "Δείτε το προφίλ στο LinkedIn",
       "url": "https://linkedin.com/in/emichailidis/",
