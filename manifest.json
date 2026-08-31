@@ -1,14 +1,14 @@
 {
-  "short_name": "MyWebsite",
-  "name": "My Website PWA",
+  "short_name": "eMichailidis",
+  "name": "Efkleidis Michailidis PWA",
   "icons": [
     {
-      "src": "/images/icon-192.png",
+      "src": "/assets/profile.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/images/icon-512.png",
+      "src": "/assets/profile.png",
       "type": "image/png",
       "sizes": "512x512"
     }
