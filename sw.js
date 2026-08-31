@@ -1,4 +1,4 @@
-const CACHE_NAME = 'site-cache-v5';
+const CACHE_NAME = 'site-cache-v6';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -7,6 +7,14 @@ const urlsToCache = [
   '/js/index.js',
   '/js/chat.js',
   '/assets/profile.jpeg',
+  '/assets/android-chrome-192x192.png',
+  '/assets/android-chrome-512x512.png',
+  '/assets/profile.png',
+  '/assets/apple-touch-icon.png',
+  '/assets/favicon-16x16.png',
+  '/assets/favicon-32x32.png',
+  '/assets/favicon.ico',
+  '/assets/profile-32x32.png',
   '/api/chat.js',
   '/api/resume.json'
 ];
