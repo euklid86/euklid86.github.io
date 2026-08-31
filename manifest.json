@@ -16,5 +16,28 @@
   "start_url": "/",
   "background_color": "#ffffff",
   "theme_color": "#007bff",
-  "display": "standalone"
+  "display": "standalone",
+  "shortcuts": [
+    {
+      "name": "Επικοινωνία / Email",
+      "short_name": "Επικοινωνία",
+      "description": "Στείλτε άμεσα email στον Ευκλείδη",
+      "url": "mailto:euklid86@gmail.com",
+      "icons": [{ "src": "/assets/icon-email.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Προφίλ LinkedIn",
+      "short_name": "LinkedIn",
+      "description": "Δείτε το προφίλ στο LinkedIn",
+      "url": "https://linkedin.com/in/emichailidis/",
+      "icons": [{ "src": "/assets/icon-linkedin.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "AI Assistant Chat",
+      "short_name": "AI Chat",
+      "description": "Ανοίξτε απευθείας τον AI βοηθό",
+      "url": "/index.html?openChat=true",
+      "icons": [{ "src": "/assets/icon-chat.png", "sizes": "192x192" }]
+    }
+  ]
 }
