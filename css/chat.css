@@ -193,3 +193,53 @@
     font-size: 20px;
     padding-bottom: 6px;
 }
+
+/* --- Gemini G-Loader --- */
+.gemini-loader {
+    width: 24px;  /* Μικρό μέγεθος για να ταιριάζει στο chat */
+    height: 24px;
+    --c: no-repeat linear-gradient(#4285F4 0 0); /* Μπλε Google */
+    background: 
+      var(--c) center/100% 4px,
+      var(--c) center/4px 100%;
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px; /* Απόσταση από το κείμενο */
+    animation: g-spin 1.5s infinite linear;
+  }
+  
+  .gemini-loader::before,
+  .gemini-loader::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: 
+      linear-gradient(#4285F4 0 0) 50% 0,
+      linear-gradient(#FBBC05 0 0) 100% 50%, /* Χρυσό Google */
+      linear-gradient(#34A853 0 0) 50% 100%,
+      linear-gradient(#EA4335 0 0) 0 50%;
+    background-size: 4px 4px;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+  }
+  
+  .gemini-loader::after {
+    transform: rotate(45deg);
+  }
+  
+  @keyframes g-spin {
+    to {
+      transform: rotate(1turn);
+      filter: hue-rotate(360deg); /* Εφέ αλλαγής χρωμάτων */
+    }
+  }
+  
+  /* Προσαρμογή του μηνύματος φόρτωσης */
+  .loading-wrapper {
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-style: italic;
+  }
