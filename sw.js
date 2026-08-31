@@ -15,6 +15,7 @@ const urlsToCache = [
   '/assets/favicon-32x32.png',
   '/assets/favicon.ico',
   '/assets/profile-32x32.png',
+  '/assets/site.webmanifest',
   '/api/chat.js',
   '/api/resume.json'
 ];
