@@ -22,7 +22,7 @@
       "name": "Email",
       "short_name": "Επικοινωνία",
       "description": "Στείλτε άμεσα email στον Ευκλείδη",
-      "url": "index.html?email=true",
+      "url": "",
       "icons": [{ "src": "/assets/icon-email.png", "sizes": "192x192" }]
     },
     {
