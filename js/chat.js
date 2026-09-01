@@ -232,21 +232,17 @@ document.addEventListener('DOMContentLoaded', () => {
         handleSend();
     };
 
-    // window.addEventListener('DOMContentLoaded', () => {
-    //     const urlParams = new URLSearchParams(window.location.search);
-    //     if (urlParams.get('openChat') === 'true') {
-    //         // Κώδικας που ανοίγει αυτόματα το chat window
-    //         const chatBox = document.getElementById('chat-box');
-    //         if (chatBox) {
-    //             chatBox.classList.remove('chat-hidden');
-    //         }
-    //     }
-    // });
-
-    document.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
-        
-        // 1. Χειρισμός Shortcut για Email
+        if (urlParams.get('openChat') === 'true') {
+            // Κώδικας που ανοίγει αυτόματα το chat window
+            const chatBox = document.getElementById('chat-box');
+            if (chatBox) {
+                chatBox.classList.remove('chat-hidden');
+                const chatInput = document.getElementById('chat-input');
+                if (chatInput) chatInput.focus();
+            }
+        }
         if (urlParams.get('email') === 'true') {
             // Καθαρίζουμε το URL για να μην ξανα-ενεργοποιηθεί σε refresh
             window.history.replaceState({}, document.title, window.location.pathname);
@@ -268,17 +264,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.removeChild(mailLink);
             }, 300);
         }
-        
-        // 2. Χειρισμός Shortcut για AI Chat
-        if (urlParams.get('openChat') === 'true') {
-            const chatBox = document.getElementById('chat-box');
-            if (chatBox) {
-                chatBox.classList.remove('chat-hidden');
-                const chatInput = document.getElementById('chat-input');
-                if (chatInput) chatInput.focus();
-            }
-            // Καθαρισμός URL
-            window.history.replaceState({}, document.title, window.location.pathname);
-        }
+
     });
+
+    
 });
