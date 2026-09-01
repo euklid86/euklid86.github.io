@@ -243,6 +243,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (chatInput) chatInput.focus();
             }
         }
+
+        if (urlParams.get('linkedin') === 'true') {
+            window.location.href = "https://linkedin.com/in/emichailidis/";
+        }
+        
         if (urlParams.get('email') === 'true') {
             // Καθαρίζουμε το URL για να μην ξανα-ενεργοποιηθεί σε refresh
             window.history.replaceState({}, document.title, window.location.pathname);
