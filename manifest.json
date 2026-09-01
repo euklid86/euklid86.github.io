@@ -29,7 +29,7 @@
       "name": "LinkedIn",
       "short_name": "LinkedIn",
       "description": "Δείτε το προφίλ στο LinkedIn",
-      "url": "/linkedin.html",
+      "url": "/index.html?linkedin=true",
       "icons": [{ "src": "/assets/icon-linkedin.png", "sizes": "192x192" }]
     },
     {
